@@ -1,2 +1,2 @@
 # GameJam-GWJ69
- Whoo yeah gamejam 6nice
+ Gamejam project for Godot Wild Jam #69
