@@ -10,7 +10,6 @@ position = Vector2(576, -328)
 
 [node name="Player" parent="." instance=ExtResource("2_7pdwd")]
 position = Vector2(576, 384)
-push_force = 1000
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(576, 384)
