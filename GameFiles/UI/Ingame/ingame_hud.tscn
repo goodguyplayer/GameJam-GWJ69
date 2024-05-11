@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8i25r8apvu52"]
+[gd_scene load_steps=3 format=3 uid="uid://b8i25r8apvu52"]
 
 [ext_resource type="PackedScene" uid="uid://d1uqi8ibxyf58" path="res://UI/Pause/pause.tscn" id="1_nndd6"]
+[ext_resource type="PackedScene" uid="uid://cnnyxigcpinl0" path="res://UI/Health/health_ui.tscn" id="2_f7qqd"]
 
 [node name="IngameHud" type="CanvasLayer"]
 
 [node name="Pause" parent="." instance=ExtResource("1_nndd6")]
+
+[node name="HealthUI" parent="." instance=ExtResource("2_f7qqd")]
