@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmsuxg42wikxr"]
+
+[ext_resource type="PackedScene" uid="uid://b1br1k4f353ub" path="res://Mechanics/ScrollingScene/scrolling_scene.tscn" id="1_kvxan"]
+[ext_resource type="PackedScene" uid="uid://pcx51ty550r8" path="res://Mechanics/Player/player_rope.tscn" id="2_aw8o4"]
+
+[node name="MainGameStage" type="Node2D"]
+
+[node name="ScrollingScene" parent="." instance=ExtResource("1_kvxan")]
+
+[node name="PlayerRope" parent="." instance=ExtResource("2_aw8o4")]
+position = Vector2(576, -256)
