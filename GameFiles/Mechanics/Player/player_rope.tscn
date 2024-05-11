@@ -6,13 +6,12 @@
 [node name="PlayerRope" type="Node2D"]
 
 [node name="Rope" parent="." instance=ExtResource("1_pinm4")]
-position = Vector2(576, -328)
 
 [node name="Player" parent="." instance=ExtResource("2_7pdwd")]
-position = Vector2(576, 384)
+position = Vector2(0, 712)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(576, 384)
+position = Vector2(0, 712)
 node_a = NodePath("../Rope/RopeSegment11")
 node_b = NodePath("../Player")
 
