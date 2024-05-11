@@ -1,3 +1,4 @@
+class_name Bat
 extends CharacterBody2D
 
 

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce6llcreihlbo"]
+
+[ext_resource type="PackedScene" uid="uid://dxiiui4ggfm4t" path="res://Mechanics/Enemies/BatSpawner/bat_spawner.tscn" id="1_pmu45"]
+
+[node name="BatSpawnerTest" type="Node2D"]
+
+[node name="BatSpawner" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(64, 616)
+
+[node name="BatSpawner2" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(192, 616)
+
+[node name="BatSpawner3" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(320, 624)
+
+[node name="BatSpawner4" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(448, 624)
+
+[node name="BatSpawner5" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(576, 624)
+
+[node name="BatSpawner6" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(704, 624)
+
+[node name="BatSpawner7" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(832, 624)
+
+[node name="BatSpawner8" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(960, 624)
+
+[node name="BatSpawner9" parent="." instance=ExtResource("1_pmu45")]
+position = Vector2(1088, 624)
