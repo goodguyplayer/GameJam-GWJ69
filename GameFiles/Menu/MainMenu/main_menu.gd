@@ -5,7 +5,7 @@ extends Control
 @onready var subsubtitle : Label = $MarginContainer/HBoxContainer/VBoxContainer2/Subsubtitle
 
 const START_PATH = "res://Scenes/Stage/main_game_stage.tscn"
-const OPTIONS_PATH = ""
+const OPTIONS_PATH = "res://Menu/Options/options.tscn"
 const CREDITS_PATH = "res://Menus/Credits/credits.tscn"
 
 # Called when the node enters the scene tree for the first time.

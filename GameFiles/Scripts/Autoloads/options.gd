@@ -28,7 +28,7 @@ func _ready() -> void:
 	var config = ConfigFile.new()
 	var err = config.load(save_path)
 	if err != OK:
-		_reset_default()
+		reset_default()
 	load_file()
 		
 
@@ -50,7 +50,7 @@ func load_file() -> void:
 	
 
 
-func _reset_default() -> void:
+func reset_default() -> void:
 	var config = ConfigFile.new()
 	config.set_value("audio_music", "music_volume", music_volume_default)
 	config.set_value("audio_music", "music_enabled", music_enabled_default)
