@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://pcx51ty550r8"]
+[gd_scene load_steps=4 format=3 uid="uid://pcx51ty550r8"]
 
 [ext_resource type="PackedScene" uid="uid://bfjlvlx4hfybu" path="res://Mechanics/Rope/rope.tscn" id="1_pinm4"]
+[ext_resource type="Script" path="res://Mechanics/Player/player_rope.gd" id="1_xtf56"]
 [ext_resource type="PackedScene" uid="uid://1y1iddc5yplj" path="res://Mechanics/Player/player.tscn" id="2_7pdwd"]
 
 [node name="PlayerRope" type="Node2D"]
+script = ExtResource("1_xtf56")
 
 [node name="Rope" parent="." instance=ExtResource("1_pinm4")]
 
@@ -14,5 +16,7 @@ position = Vector2(0, 712)
 position = Vector2(0, 712)
 node_a = NodePath("../Rope/RopeSegment11")
 node_b = NodePath("../Player")
+
+[connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
 
 [editable path="Rope"]

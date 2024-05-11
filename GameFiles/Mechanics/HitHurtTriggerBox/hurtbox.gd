@@ -11,5 +11,6 @@ func _ready():
 
 
 func _on_area_entered(area):
+	print("Area entered")
 	if area is Hitbox:
 		health_component.take_damage()

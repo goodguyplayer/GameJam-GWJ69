@@ -6,6 +6,10 @@ extends RigidBody2D
 @export var dash_delay : float = 3.0
 
 @onready var dash_timer : Timer = $DashTimer
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+
+
+signal player_died()
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,3 +37,12 @@ func _physics_process(delta):
 
 func _on_dash_timer_timeout():
 	print("Timer stopped")
+
+
+func _on_health_component_health_changed(old_health, new_health):
+	print("damage received")
+	animation_player.play("flicker")
+
+
+func _on_health_component_died():
+	player_died.emit()
