@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1br1k4f353ub"]
 
-[ext_resource type="Script" path="res://Mechanics/scrolling_scene.gd" id="1_pce7h"]
+[ext_resource type="Script" path="res://Mechanics/ScrollingScene/scrolling_scene.gd" id="1_pce7h"]
 [ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="2_bcey2"]
 
 [node name="ScrollingScene" type="ParallaxBackground"]
