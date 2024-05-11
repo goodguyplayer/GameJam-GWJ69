@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhjs6sfynfnei"]
+
+[ext_resource type="Script" path="res://Menu/Options/action_remap_button.gd" id="1_jj4an"]
+
+[node name="ActionRemapButton" type="Button"]
+toggle_mode = true
+text = "input_left"
+script = ExtResource("1_jj4an")
