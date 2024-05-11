@@ -40,9 +40,9 @@ func _on_dash_timer_timeout():
 
 
 func _on_health_component_health_changed(old_health, new_health):
-	print("damage received")
+	SignalsAutoload.player_health_changed.emit(old_health, new_health)
 	animation_player.play("flicker")
 
 
 func _on_health_component_died():
-	player_died.emit()
+	SignalsAutoload.player_died.emit()

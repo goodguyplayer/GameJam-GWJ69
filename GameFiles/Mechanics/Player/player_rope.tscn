@@ -17,6 +17,4 @@ position = Vector2(0, 712)
 node_a = NodePath("../Rope/RopeSegment11")
 node_b = NodePath("../Player")
 
-[connection signal="player_died" from="Player" to="." method="_on_player_player_died"]
-
 [editable path="Rope"]
