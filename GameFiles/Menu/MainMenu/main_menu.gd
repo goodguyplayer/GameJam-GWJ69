@@ -4,7 +4,7 @@ extends Control
 @onready var subtitle : Label = $MarginContainer/HBoxContainer/VBoxContainer2/Subtitle
 @onready var subsubtitle : Label = $MarginContainer/HBoxContainer/VBoxContainer2/Subsubtitle
 
-const START_PATH = ""
+const START_PATH = "res://Scenes/Stage/main_game_stage.tscn"
 const OPTIONS_PATH = ""
 const CREDITS_PATH = "res://Menus/Credits/credits.tscn"
 
@@ -25,8 +25,9 @@ func _ready():
 
 
 func _on_start_pressed():
-	var start_options = load(START_PATH).instantiate()
-	get_tree().current_scene.add_child(start_options)
+	#var start_options = load(START_PATH).instantiate()
+	#get_tree().current_scene.add_child(start_options)
+	get_tree().change_scene_to_file(START_PATH)
 
 
 func _on_options_pressed():
