@@ -3,6 +3,10 @@ extends Control
 const MENU_PATH : String = "res://Menu/MainMenu/main_menu.tscn"
 
 
+func _ready():
+	SignalsAutoload.player_fell.connect(game_over)
+
+
 func game_over() -> void:
 	visible = true
 
