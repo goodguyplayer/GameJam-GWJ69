@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://pcx51ty550r8"]
+
+[ext_resource type="PackedScene" uid="uid://bfjlvlx4hfybu" path="res://Mechanics/Rope/rope.tscn" id="1_pinm4"]
+[ext_resource type="PackedScene" uid="uid://1y1iddc5yplj" path="res://Mechanics/Player/player.tscn" id="2_7pdwd"]
+
+[node name="PlayerRope" type="Node2D"]
+
+[node name="Rope" parent="." instance=ExtResource("1_pinm4")]
+position = Vector2(576, -328)
+
+[node name="Player" parent="." instance=ExtResource("2_7pdwd")]
+position = Vector2(576, 384)
+push_force = 1000
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(576, 384)
+node_a = NodePath("../Rope/RopeSegment11")
+node_b = NodePath("../Player")
+
+[editable path="Rope"]
