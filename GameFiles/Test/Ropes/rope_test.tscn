@@ -8,7 +8,7 @@
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(8, 76)
-polygon = PackedVector2Array(45, 252, 158, 252, 156, 351, 312, 369, 354, 277, 468, 304, 537, 388, 683, 339, 940, 370, 998, 454, 1135, 385, 1095, 554, 711, 595, 282, 543, 76, 512)
+polygon = PackedVector2Array(45, 252, 158, 252, 152, 324, 312, 369, 354, 277, 468, 304, 537, 388, 683, 339, 940, 370, 998, 454, 1135, 385, 1204, 502, 711, 595, 282, 543, 76, 512)
 
 [node name="Rope" parent="." instance=ExtResource("1_f8phw")]
 position = Vector2(326, 57)
