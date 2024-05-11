@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmsuxg42wikxr"]
+[gd_scene load_steps=5 format=3 uid="uid://dmsuxg42wikxr"]
 
 [ext_resource type="PackedScene" uid="uid://b1br1k4f353ub" path="res://Mechanics/ScrollingScene/scrolling_scene.tscn" id="1_kvxan"]
 [ext_resource type="PackedScene" uid="uid://pcx51ty550r8" path="res://Mechanics/Player/player_rope.tscn" id="2_aw8o4"]
 [ext_resource type="PackedScene" uid="uid://dxiiui4ggfm4t" path="res://Mechanics/Enemies/BatSpawner/bat_spawner.tscn" id="3_3vafg"]
+[ext_resource type="PackedScene" uid="uid://b8i25r8apvu52" path="res://UI/Ingame/ingame_hud.tscn" id="4_lxkdm"]
 
 [node name="MainGameStage" type="Node2D"]
 
@@ -39,3 +40,5 @@ position = Vector2(960, 624)
 
 [node name="BatSpawner9" parent="Spawners" instance=ExtResource("3_3vafg")]
 position = Vector2(1088, 624)
+
+[node name="IngameHud" parent="." instance=ExtResource("4_lxkdm")]
