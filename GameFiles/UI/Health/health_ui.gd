@@ -20,4 +20,4 @@ func health_changed(old, new) -> void:
 
 
 func player_died() -> void:
-	healthy.size.x = 0
+	healthy.visible = false
