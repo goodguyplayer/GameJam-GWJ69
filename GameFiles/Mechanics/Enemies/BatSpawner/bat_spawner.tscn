@@ -72,4 +72,3 @@ position = Vector2(0, 64)
 libraries = {
 "": SubResource("AnimationLibrary_tkcfd")
 }
-autoplay = "spawn_start"
