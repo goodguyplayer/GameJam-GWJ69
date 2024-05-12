@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1br1k4f353ub"]
+[gd_scene load_steps=4 format=3 uid="uid://b1br1k4f353ub"]
 
 [ext_resource type="Script" path="res://Mechanics/ScrollingScene/scrolling_scene.gd" id="1_pce7h"]
 [ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="2_bcey2"]
+[ext_resource type="Material" uid="uid://ci37o6gla8y2f" path="res://Mechanics/ScrollingScene/background_shader.tres" id="2_igqgh"]
 
-[node name="ScrollingScene" type="ParallaxBackground"]
+[node name="ScrollingScene" type="Node2D"]
 script = ExtResource("1_pce7h")
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(0, 640)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_igqgh")
 position = Vector2(576, 320)
-scale = Vector2(9, 5)
+scale = Vector2(10, 6)
 texture = ExtResource("2_bcey2")

@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ci37o6gla8y2f"]
+
+[ext_resource type="Shader" path="res://Mechanics/ScrollingScene/background_wavy.gdshader" id="1_yj7tk"]
+
+[resource]
+shader = ExtResource("1_yj7tk")
+shader_parameter/OCTAVE = 12
+shader_parameter/timescale = 12.0
+shader_parameter/CLOUD1_COL = Color(0.14902, 0.00392157, 0.211765, 0.4)
+shader_parameter/CLOUD2_COL = Color(0.133333, 0, 0.192157, 0.2)
+shader_parameter/CLOUD3_COL = Color(0.105882, 0, 0.152941, 1)
+shader_parameter/CLOUD4_COL = Color(0.0823529, 0, 0.117647, 1)
+shader_parameter/SPACE = Color(0.09, 0.06, 0.28, 0.3)
+shader_parameter/zoomScale = 6.0
+shader_parameter/size = 20.0
+shader_parameter/starscale = 0.0
+shader_parameter/prob = 0.98
