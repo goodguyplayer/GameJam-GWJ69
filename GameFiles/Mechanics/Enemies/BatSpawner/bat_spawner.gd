@@ -1,3 +1,4 @@
+class_name BatSpawner
 extends Node2D
 
 
