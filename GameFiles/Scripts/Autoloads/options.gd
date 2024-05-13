@@ -9,6 +9,7 @@ var save_path = SAVE_DIR + "options_config" + FILE_FORMAT
 @export var music_enabled : bool = true
 @export var audio_volume : float = 1
 @export var audio_enabled : bool = true
+@export var graphics_simple : bool = false
 
 var music_volume_default : float = 1
 var music_enabled_default : bool = true
