@@ -4,6 +4,6 @@ extends Node2D
 
 
 func _ready():
-	if !OptionsAutoload.graphics_simple:
+	if OptionsAutoload.graphics_simple:
 		self.material = shader_material
 

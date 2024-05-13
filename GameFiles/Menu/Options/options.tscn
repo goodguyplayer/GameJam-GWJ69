@@ -49,8 +49,10 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
+current_tab = 1
 
 [node name="Inputs" type="TabBar" parent="MarginContainer/VBoxContainer/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Inputs"]
@@ -113,8 +115,77 @@ text = "input_dash"
 action = "input_pause"
 
 [node name="Audio" type="TabBar" parent="MarginContainer/VBoxContainer/TabContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="EnableAudio" type="CheckBox" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+button_pressed = true
+text = "Enable Audio?"
+
+[node name="EnableMusic" type="CheckBox" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+button_pressed = true
+text = "Enable Music?"
+
+[node name="AudioSlider" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/AudioSlider"]
+layout_mode = 2
+text = "Audio"
+
+[node name="Audio" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/AudioSlider"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/AudioSlider"]
+layout_mode = 2
+text = "0%"
+
+[node name="MusicSlider" type="HBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/MusicSlider"]
+layout_mode = 2
+text = "Music"
+
+[node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/MusicSlider"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/MusicSlider"]
+layout_mode = 2
+text = "0%"
+
+[node name="Graphics" type="TabBar" parent="MarginContainer/VBoxContainer/TabContainer"]
 visible = false
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/TabContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="EnableShaders" type="CheckBox" parent="MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Enable Shaders? (Might cause dizziness)"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -141,6 +212,11 @@ text = "Discard Changes"
 layout_mode = 2
 text = "Clear Save"
 
+[connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/EnableAudio" to="." method="_on_enable_audio_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/EnableMusic" to="." method="_on_enable_music_toggled"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/AudioSlider/Audio" to="." method="_on_audio_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/TabContainer/Audio/VBoxContainer/MusicSlider/Music" to="." method="_on_music_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/TabContainer/Graphics/VBoxContainer/EnableShaders" to="." method="_on_enable_shaders_toggled"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/SaveReturn" to="." method="_on_save_return_pressed"]
