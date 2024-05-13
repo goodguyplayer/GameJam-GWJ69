@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://dksbpk7mn1n34"]
+
+[ext_resource type="Script" path="res://Menu/Tutorial/tutorial.gd" id="1_qy5ii"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k84ka"]
+bg_color = Color(0, 0, 0, 0.564706)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi8sv"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qy5ii")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k84ka")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -260.0
+offset_right = 512.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pi8sv")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "TUTORIAL"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Oh noes, you're stuck in the void, hanging by a thread, quite literally!
+Not only that, but now there's bats and tentacles trying to get you to let go off the rope, making you spin eternally in the void!
+
+Lucky for you, you brought some nice tunes. Might as well enjoy them once more before you end up lost forever!"
+horizontal_alignment = 1
+
+[node name="Swing" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Swing with your arrow keys %s and %s to avoid the incoming bats & other dangers!"
+horizontal_alignment = 1
+
+[node name="Dash" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Use %s to dash towards where you're moving, but look out! You can only do it every once in a while!"
+horizontal_alignment = 1
+
+[node name="Dash2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Avoid the bats, listen to the tunes and don't get hit 3 times!
+
+
+See you on the endless vastness of the void! ... Eventually. "
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Return to Main Menu"
+
+[connection signal="pressed" from="MarginContainer/ScrollContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

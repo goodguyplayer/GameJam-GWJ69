@@ -10,6 +10,7 @@ extends Control
 const START_PATH = "res://Scenes/Stage/main_game_stage.tscn"
 const OPTIONS_PATH = "res://Menu/Options/options.tscn"
 const CREDITS_PATH = "res://Menu/Credits/credits.tscn"
+const TUTORIAL_PATH = "res://Menu/Tutorial/tutorial.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +34,11 @@ func _on_start_pressed():
 	get_tree().change_scene_to_file(START_PATH)
 
 
+func _on_tutorial_pressed():
+	var tutorial = load(TUTORIAL_PATH).instantiate()
+	get_tree().current_scene.add_child(tutorial)
+	
+	
 func _on_options_pressed():
 	var options = load(OPTIONS_PATH).instantiate()
 	get_tree().current_scene.add_child(options)
@@ -51,3 +57,4 @@ func _on_label_pressed():
 	var nice = load(easter_egg).instantiate()
 	nice.position = fake_label_button.global_position
 	get_tree().current_scene.add_child(nice)
+
