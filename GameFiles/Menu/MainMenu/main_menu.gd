@@ -4,6 +4,9 @@ extends Control
 @onready var subtitle : Label = $MarginContainer/HBoxContainer/VBoxContainer2/Subtitle
 @onready var subsubtitle : Label = $MarginContainer/HBoxContainer/VBoxContainer2/Subsubtitle
 
+@onready var easter_egg := "res://Menu/MainMenu/nice.tscn"
+@onready var fake_label_button : Button = $MarginContainer/HBoxContainer/VBoxContainer3/Label
+
 const START_PATH = "res://Scenes/Stage/main_game_stage.tscn"
 const OPTIONS_PATH = "res://Menu/Options/options.tscn"
 const CREDITS_PATH = "res://Menu/Credits/credits.tscn"
@@ -42,3 +45,9 @@ func _on_credits_pressed():
 
 func _on_exit_pressed():
 	get_tree().quit()
+
+
+func _on_label_pressed():
+	var nice = load(easter_egg).instantiate()
+	nice.position = fake_label_button.global_position
+	get_tree().current_scene.add_child(nice)
