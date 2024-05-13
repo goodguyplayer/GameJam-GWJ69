@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 OptionsAutoload="*res://Scripts/Autoloads/options.gd"
 SignalsAutoload="*res://Scripts/Autoloads/signals.gd"
+RandomizerAutoload="*res://Scripts/Autoloads/randomizer.gd"
 
 [display]
 
