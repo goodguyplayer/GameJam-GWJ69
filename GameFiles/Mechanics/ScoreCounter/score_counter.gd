@@ -35,8 +35,17 @@ func on_quit() -> void:
 	timer.stop()
 
 
+func _score_increase(value) -> void:
+	current_score += value
+	if current_score >= highscore:
+		highscore = current_score
+	SignalsAutoload.score_changed.emit(current_score, highscore)
+
+
 func _on_timer_timeout():
 	current_score += 1
 	if current_score >= highscore:
 		highscore = current_score
 	SignalsAutoload.score_changed.emit(current_score, highscore)
+	
+

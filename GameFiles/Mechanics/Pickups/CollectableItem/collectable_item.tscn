@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc818xuo226nl"]
+
+[ext_resource type="Script" path="res://Mechanics/Pickups/CollectableItem/collectable_item.gd" id="1_3nvyu"]
+[ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="2_0mufo"]
+[ext_resource type="PackedScene" uid="uid://bjh6sj6ppu4m0" path="res://Mechanics/HitHurtTriggerBox/triggerbox.tscn" id="3_qgglv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xwf4"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bt7vp"]
+radius = 22.0227
+
+[node name="CollectableItem" type="CharacterBody2D"]
+script = ExtResource("1_3nvyu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0mufo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3xwf4")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Collisions" type="Node2D" parent="."]
+
+[node name="Triggerbox" parent="Collisions" instance=ExtResource("3_qgglv")]
+
+[node name="CollisionShape2D" parent="Collisions/Triggerbox" index="0"]
+shape = SubResource("CircleShape2D_bt7vp")
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Collisions/Triggerbox" to="." method="_on_triggerbox_body_entered"]
+
+[editable path="Collisions/Triggerbox"]
