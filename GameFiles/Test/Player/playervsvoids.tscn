@@ -7,7 +7,7 @@
 
 [node name="VoidHole" parent="." instance=ExtResource("2_kh48q")]
 position = Vector2(432, 384)
-gravity_pull = 30.0
+gravity_pull = 100.0
 
 [node name="PlayerRope" parent="." instance=ExtResource("1_u2qwt")]
 position = Vector2(512, -328)
