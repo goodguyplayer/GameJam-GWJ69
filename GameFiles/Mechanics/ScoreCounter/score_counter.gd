@@ -5,6 +5,8 @@ const SAVE_DIR = "user://"
 const FILE_FORMAT = ".cfg"
 const FILE_NAME = "score_config"
 
+@onready var timer : Timer = $Timer
+
 @export var highscore : int = 0
 @export var current_score : int = 0
 
@@ -19,18 +21,18 @@ func _ready():
 		save_score(0, 0)
 	
 	highscore = config.get_value("score", "highscore")
-	current_score = config.get_value("score", "current_score")
+	current_score = 0
 	SignalsAutoload.player_fell.connect(on_quit)
 
 
 func save_score(high, current) -> void:
 	config.set_value("score", "highscore", high)
-	config.set_value("score", "current_score", current)
 	config.save(save_path)
 
 
 func on_quit() -> void:
 	save_score(highscore, current_score)
+	timer.stop()
 
 
 func _on_timer_timeout():
