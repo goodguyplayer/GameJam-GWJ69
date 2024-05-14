@@ -3,10 +3,12 @@ extends Area2D
 
 @export var player_body : Player
 @export var gravity_pull : float = 9.8
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	_spawn()
 
 
 func _physics_process(delta):
@@ -15,12 +17,16 @@ func _physics_process(delta):
 
 
 func _spawn() -> void:
-	pass
+	animation_player.play("spawn")
 	
 
 func _despawn() -> void:
-	pass
+	animation_player.play("despawn")
 
+
+func _die() -> void:
+	queue_free()
+	
 
 func _on_body_entered(body):
 	if body is Player:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fsdyoorly2hg"]
+[gd_scene load_steps=13 format=3 uid="uid://fsdyoorly2hg"]
 
 [ext_resource type="Script" path="res://Mechanics/Enemies/VoidHole/void_hole.gd" id="1_hjbhx"]
 [ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="1_rjo0g"]
@@ -21,12 +21,94 @@ radius = 64.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_h6ri5"]
 radius = 32.0
 
+[sub_resource type="Animation" id="Animation_608cc"]
+resource_name = "spawn"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_despawn"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y1x3l"]
+resource_name = "despawn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_die"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_rfkw4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuxdg"]
+_data = {
+"RESET": SubResource("Animation_rfkw4"),
+"despawn": SubResource("Animation_y1x3l"),
+"spawn": SubResource("Animation_608cc")
+}
+
 [node name="VoidHole" type="Area2D"]
 collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_hjbhx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_4uj5d")
 position = Vector2(-3.8147e-06, 3.8147e-06)
 scale = Vector2(1.25, 1.25)
@@ -49,6 +131,11 @@ attack_component = NodePath("../../Components/AttackComponent")
 
 [node name="CollisionShape2D" parent="Collisions/Hitbox" index="0"]
 shape = SubResource("CircleShape2D_h6ri5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uuxdg")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
