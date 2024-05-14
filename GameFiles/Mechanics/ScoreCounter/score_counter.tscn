@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu3saq68wp872"]
+
+[ext_resource type="Script" path="res://Mechanics/ScoreCounter/score_counter.gd" id="1_maota"]
+
+[node name="ScoreCounter" type="Node"]
+script = ExtResource("1_maota")
