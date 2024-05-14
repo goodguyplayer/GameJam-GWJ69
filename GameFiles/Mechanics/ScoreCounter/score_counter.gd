@@ -23,13 +23,6 @@ func _ready():
 	SignalsAutoload.player_fell.connect(on_quit)
 
 
-func _process(delta):
-	current_score += 1
-	if current_score >= highscore:
-		highscore = current_score
-	SignalsAutoload.score_changed.emit(current_score, highscore)
-		
-
 func save_score(high, current) -> void:
 	config.set_value("score", "highscore", high)
 	config.set_value("score", "current_score", current)
@@ -38,3 +31,10 @@ func save_score(high, current) -> void:
 
 func on_quit() -> void:
 	save_score(highscore, current_score)
+
+
+func _on_timer_timeout():
+	current_score += 1
+	if current_score >= highscore:
+		highscore = current_score
+	SignalsAutoload.score_changed.emit(current_score, highscore)
