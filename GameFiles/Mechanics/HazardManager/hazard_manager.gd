@@ -21,7 +21,7 @@ func _spawn_bats() -> void:
 		
 		bat_spawner = bat_spawner_array[RandomizerAutoload.rng.randi_range(0, len(bat_spawner_array) - 1)]
 		if bat_spawner not in unique_spawners:
-			bat_spawner.spawn_bat()
+			bat_spawner.start_spawning_bat()
 			unique_spawners.append(bat_spawner)
 			to_spawn -= 1
 	timer.start(RandomizerAutoload.rng.randf_range(time_delay_min, time_delay_max))
