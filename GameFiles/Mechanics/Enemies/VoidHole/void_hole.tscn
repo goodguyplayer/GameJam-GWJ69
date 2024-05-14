@@ -1,9 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://fsdyoorly2hg"]
+[gd_scene load_steps=9 format=3 uid="uid://fsdyoorly2hg"]
 
 [ext_resource type="Script" path="res://Mechanics/Enemies/VoidHole/void_hole.gd" id="1_hjbhx"]
 [ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="1_rjo0g"]
+[ext_resource type="Shader" path="res://Mechanics/Enemies/VoidHole/void_hole.gdshader" id="2_rwgkn"]
 [ext_resource type="Script" path="res://Component/attack_component.gd" id="2_w3lds"]
 [ext_resource type="PackedScene" uid="uid://ct12gy5o1ped" path="res://Mechanics/HitHurtTriggerBox/hitbox.tscn" id="3_gueq8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4uj5d"]
+shader = ExtResource("2_rwgkn")
+shader_parameter/ring_radius = 0.4
+shader_parameter/thickness_scalar = 0.7
+shader_parameter/oscillation_scalar = 0.025
+shader_parameter/speed = 1.0
+shader_parameter/main_color = Color(1, 1, 1, 1)
+shader_parameter/lerp_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fx24b"]
 radius = 64.0
@@ -17,6 +27,9 @@ collision_mask = 3
 script = ExtResource("1_hjbhx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4uj5d")
+position = Vector2(-3.8147e-06, 3.8147e-06)
+scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_rjo0g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
