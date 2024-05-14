@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://s50udi7hdsib"]
+
+[ext_resource type="PackedScene" uid="uid://pcx51ty550r8" path="res://Mechanics/Player/player_rope.tscn" id="1_u2qwt"]
+[ext_resource type="PackedScene" uid="uid://fsdyoorly2hg" path="res://Mechanics/Enemies/VoidHole/void_hole.tscn" id="2_kh48q"]
+
+[node name="Playervsvoids" type="Node2D"]
+
+[node name="VoidHole" parent="." instance=ExtResource("2_kh48q")]
+position = Vector2(432, 384)
+gravity_pull = 30.0
+
+[node name="PlayerRope" parent="." instance=ExtResource("1_u2qwt")]
+position = Vector2(512, -328)
