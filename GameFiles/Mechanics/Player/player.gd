@@ -1,3 +1,4 @@
+class_name Player
 extends RigidBody2D
 
 
@@ -32,6 +33,8 @@ func _physics_process(delta):
 			dash_timer.start(dash_delay)
 			
 	apply_force(force_to_push)
+
+
 
 
 
