@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccpbgcp3gl10l"]
+
+[ext_resource type="Script" path="res://Mechanics/Pickups/CollectableItemSpawner/collectable_item_spawner.gd" id="1_kd7ul"]
+
+[node name="CollectableItemSpawner" type="Node2D"]
+script = ExtResource("1_kd7ul")
+
+[node name="Marker2D" type="Marker2D" parent="."]
