@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmsuxg42wikxr"]
+[gd_scene load_steps=13 format=3 uid="uid://dmsuxg42wikxr"]
 
 [ext_resource type="PackedScene" uid="uid://b1br1k4f353ub" path="res://Mechanics/ScrollingScene/scrolling_scene.tscn" id="1_kvxan"]
 [ext_resource type="PackedScene" uid="uid://pcx51ty550r8" path="res://Mechanics/Player/player_rope.tscn" id="2_aw8o4"]
 [ext_resource type="PackedScene" uid="uid://dxiiui4ggfm4t" path="res://Mechanics/Enemies/BatSpawner/bat_spawner.tscn" id="3_3vafg"]
 [ext_resource type="PackedScene" uid="uid://b66tt6tmrjw4l" path="res://Mechanics/Enemies/VoidHoleSpawner/void_hole_spawner.tscn" id="4_b748i"]
 [ext_resource type="PackedScene" uid="uid://b8i25r8apvu52" path="res://UI/Ingame/ingame_hud.tscn" id="4_lxkdm"]
+[ext_resource type="PackedScene" uid="uid://ccpbgcp3gl10l" path="res://Mechanics/Pickups/CollectableItemSpawner/collectable_item_spawner.tscn" id="4_mi1fj"]
 [ext_resource type="PackedScene" uid="uid://bj5obb2exasso" path="res://Mechanics/HazardManager/hazard_manager.tscn" id="4_x58jo"]
 [ext_resource type="PackedScene" uid="uid://bjh6sj6ppu4m0" path="res://Mechanics/HitHurtTriggerBox/triggerbox.tscn" id="6_upn2v"]
 [ext_resource type="Script" path="res://Scripts/Actions/ActionFolder/player_fell.gd" id="7_c4qgx"]
@@ -99,9 +100,54 @@ position = Vector2(832, 384)
 [node name="VoidHoleSpawner7" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
 position = Vector2(832, 128)
 
-[node name="HazardManager" parent="." node_paths=PackedStringArray("bat_spawner_array", "void_hole_array") instance=ExtResource("4_x58jo")]
+[node name="CollectableItemSpawners" type="Node2D" parent="."]
+
+[node name="CollectableItemSpawner" parent="CollectableItemSpawners" instance=ExtResource("4_mi1fj")]
+position = Vector2(-111, 55)
+spawner = 0
+
+[node name="Marker2D" parent="CollectableItemSpawners/CollectableItemSpawner" index="0"]
+position = Vector2(84, 35)
+
+[node name="CollectableItemSpawner2" parent="CollectableItemSpawners" instance=ExtResource("4_mi1fj")]
+position = Vector2(1271, 142)
+spawner = 0
+
+[node name="Marker2D" parent="CollectableItemSpawners/CollectableItemSpawner2" index="0"]
+position = Vector2(-67, 54)
+
+[node name="CollectableItemSpawner3" parent="CollectableItemSpawners" instance=ExtResource("4_mi1fj")]
+position = Vector2(1273, 329)
+spawner = 0
+
+[node name="Marker2D" parent="CollectableItemSpawners/CollectableItemSpawner3" index="0"]
+position = Vector2(-64, 0)
+
+[node name="CollectableItemSpawner4" parent="CollectableItemSpawners" instance=ExtResource("4_mi1fj")]
+position = Vector2(-89, 250)
+spawner = 0
+
+[node name="Marker2D" parent="CollectableItemSpawners/CollectableItemSpawner4" index="0"]
+position = Vector2(62, 0)
+
+[node name="CollectableItemSpawner5" parent="CollectableItemSpawners" instance=ExtResource("4_mi1fj")]
+position = Vector2(-163, 452)
+spawner = 0
+
+[node name="Marker2D" parent="CollectableItemSpawners/CollectableItemSpawner5" index="0"]
+position = Vector2(104, -25)
+
+[node name="CollectableItemSpawner6" parent="CollectableItemSpawners" instance=ExtResource("4_mi1fj")]
+position = Vector2(1292, 533)
+spawner = 0
+
+[node name="Marker2D" parent="CollectableItemSpawners/CollectableItemSpawner6" index="0"]
+position = Vector2(-86, -12)
+
+[node name="HazardManager" parent="." node_paths=PackedStringArray("bat_spawner_array", "void_hole_array", "collectable_array") instance=ExtResource("4_x58jo")]
 bat_spawner_array = [NodePath("../Spawners/BatSpawner"), NodePath("../Spawners/BatSpawner2"), NodePath("../Spawners/BatSpawner3"), NodePath("../Spawners/BatSpawner4"), NodePath("../Spawners/BatSpawner5"), NodePath("../Spawners/BatSpawner6"), NodePath("../Spawners/BatSpawner7"), NodePath("../Spawners/BatSpawner8"), NodePath("../Spawners/BatSpawner9")]
 void_hole_array = [NodePath("../VoidHoleSpawners/VoidHoleSpawner"), NodePath("../VoidHoleSpawners/VoidHoleSpawner2"), NodePath("../VoidHoleSpawners/VoidHoleSpawner16"), NodePath("../VoidHoleSpawners/VoidHoleSpawner3"), NodePath("../VoidHoleSpawners/VoidHoleSpawner4"), NodePath("../VoidHoleSpawners/VoidHoleSpawner5"), NodePath("../VoidHoleSpawners/VoidHoleSpawner8"), NodePath("../VoidHoleSpawners/VoidHoleSpawner9"), NodePath("../VoidHoleSpawners/VoidHoleSpawner10"), NodePath("../VoidHoleSpawners/VoidHoleSpawner11"), NodePath("../VoidHoleSpawners/VoidHoleSpawner12"), NodePath("../VoidHoleSpawners/VoidHoleSpawner13"), NodePath("../VoidHoleSpawners/VoidHoleSpawner14"), NodePath("../VoidHoleSpawners/VoidHoleSpawner15"), NodePath("../VoidHoleSpawners/VoidHoleSpawner6"), NodePath("../VoidHoleSpawners/VoidHoleSpawner7")]
+collectable_array = [NodePath("../CollectableItemSpawners/CollectableItemSpawner"), NodePath("../CollectableItemSpawners/CollectableItemSpawner2"), NodePath("../CollectableItemSpawners/CollectableItemSpawner3"), NodePath("../CollectableItemSpawners/CollectableItemSpawner4"), NodePath("../CollectableItemSpawners/CollectableItemSpawner5"), NodePath("../CollectableItemSpawners/CollectableItemSpawner6")]
 
 [node name="PlayerRope" parent="." instance=ExtResource("2_aw8o4")]
 position = Vector2(576, -256)
@@ -136,5 +182,11 @@ script = ExtResource("7_c4qgx")
 
 [node name="ScoreCounter" parent="." instance=ExtResource("9_kmsc8")]
 
+[editable path="CollectableItemSpawners/CollectableItemSpawner"]
+[editable path="CollectableItemSpawners/CollectableItemSpawner2"]
+[editable path="CollectableItemSpawners/CollectableItemSpawner3"]
+[editable path="CollectableItemSpawners/CollectableItemSpawner4"]
+[editable path="CollectableItemSpawners/CollectableItemSpawner5"]
+[editable path="CollectableItemSpawners/CollectableItemSpawner6"]
 [editable path="Triggerbox"]
 [editable path="Triggerbox2"]
