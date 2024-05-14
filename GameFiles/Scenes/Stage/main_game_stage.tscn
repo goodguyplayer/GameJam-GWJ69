@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmsuxg42wikxr"]
+[gd_scene load_steps=11 format=3 uid="uid://dmsuxg42wikxr"]
 
 [ext_resource type="PackedScene" uid="uid://b1br1k4f353ub" path="res://Mechanics/ScrollingScene/scrolling_scene.tscn" id="1_kvxan"]
 [ext_resource type="PackedScene" uid="uid://pcx51ty550r8" path="res://Mechanics/Player/player_rope.tscn" id="2_aw8o4"]
 [ext_resource type="PackedScene" uid="uid://dxiiui4ggfm4t" path="res://Mechanics/Enemies/BatSpawner/bat_spawner.tscn" id="3_3vafg"]
+[ext_resource type="PackedScene" uid="uid://b66tt6tmrjw4l" path="res://Mechanics/Enemies/VoidHoleSpawner/void_hole_spawner.tscn" id="4_b748i"]
 [ext_resource type="PackedScene" uid="uid://b8i25r8apvu52" path="res://UI/Ingame/ingame_hud.tscn" id="4_lxkdm"]
 [ext_resource type="PackedScene" uid="uid://bj5obb2exasso" path="res://Mechanics/HazardManager/hazard_manager.tscn" id="4_x58jo"]
 [ext_resource type="PackedScene" uid="uid://bjh6sj6ppu4m0" path="res://Mechanics/HitHurtTriggerBox/triggerbox.tscn" id="6_upn2v"]
@@ -50,8 +51,59 @@ position = Vector2(960, 624)
 [node name="BatSpawner9" parent="Spawners" instance=ExtResource("3_3vafg")]
 position = Vector2(1088, 624)
 
-[node name="HazardManager" parent="." node_paths=PackedStringArray("bat_spawner_array") instance=ExtResource("4_x58jo")]
+[node name="VoidHoleSpawners" type="Node2D" parent="."]
+
+[node name="VoidHoleSpawner" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(192, 64)
+
+[node name="VoidHoleSpawner2" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(448, 192)
+
+[node name="VoidHoleSpawner16" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(320, 128)
+
+[node name="VoidHoleSpawner3" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(704, 192)
+
+[node name="VoidHoleSpawner4" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(960, 64)
+
+[node name="VoidHoleSpawner5" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(960, 320)
+
+[node name="VoidHoleSpawner8" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(832, 256)
+
+[node name="VoidHoleSpawner9" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(704, 448)
+
+[node name="VoidHoleSpawner10" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(832, 512)
+
+[node name="VoidHoleSpawner11" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(320, 512)
+
+[node name="VoidHoleSpawner12" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(448, 448)
+
+[node name="VoidHoleSpawner13" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(320, 384)
+
+[node name="VoidHoleSpawner14" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(192, 320)
+
+[node name="VoidHoleSpawner15" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(320, 256)
+
+[node name="VoidHoleSpawner6" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(832, 384)
+
+[node name="VoidHoleSpawner7" parent="VoidHoleSpawners" instance=ExtResource("4_b748i")]
+position = Vector2(832, 128)
+
+[node name="HazardManager" parent="." node_paths=PackedStringArray("bat_spawner_array", "void_hole_array") instance=ExtResource("4_x58jo")]
 bat_spawner_array = [NodePath("../Spawners/BatSpawner"), NodePath("../Spawners/BatSpawner2"), NodePath("../Spawners/BatSpawner3"), NodePath("../Spawners/BatSpawner4"), NodePath("../Spawners/BatSpawner5"), NodePath("../Spawners/BatSpawner6"), NodePath("../Spawners/BatSpawner7"), NodePath("../Spawners/BatSpawner8"), NodePath("../Spawners/BatSpawner9")]
+void_hole_array = [NodePath("../VoidHoleSpawners/VoidHoleSpawner"), NodePath("../VoidHoleSpawners/VoidHoleSpawner2"), NodePath("../VoidHoleSpawners/VoidHoleSpawner16"), NodePath("../VoidHoleSpawners/VoidHoleSpawner3"), NodePath("../VoidHoleSpawners/VoidHoleSpawner4"), NodePath("../VoidHoleSpawners/VoidHoleSpawner5"), NodePath("../VoidHoleSpawners/VoidHoleSpawner8"), NodePath("../VoidHoleSpawners/VoidHoleSpawner9"), NodePath("../VoidHoleSpawners/VoidHoleSpawner10"), NodePath("../VoidHoleSpawners/VoidHoleSpawner11"), NodePath("../VoidHoleSpawners/VoidHoleSpawner12"), NodePath("../VoidHoleSpawners/VoidHoleSpawner13"), NodePath("../VoidHoleSpawners/VoidHoleSpawner14"), NodePath("../VoidHoleSpawners/VoidHoleSpawner15"), NodePath("../VoidHoleSpawners/VoidHoleSpawner6"), NodePath("../VoidHoleSpawners/VoidHoleSpawner7")]
 
 [node name="IngameHud" parent="." instance=ExtResource("4_lxkdm")]
 
