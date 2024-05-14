@@ -1,10 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmsuxg42wikxr"]
+[gd_scene load_steps=10 format=3 uid="uid://dmsuxg42wikxr"]
 
 [ext_resource type="PackedScene" uid="uid://b1br1k4f353ub" path="res://Mechanics/ScrollingScene/scrolling_scene.tscn" id="1_kvxan"]
 [ext_resource type="PackedScene" uid="uid://pcx51ty550r8" path="res://Mechanics/Player/player_rope.tscn" id="2_aw8o4"]
 [ext_resource type="PackedScene" uid="uid://dxiiui4ggfm4t" path="res://Mechanics/Enemies/BatSpawner/bat_spawner.tscn" id="3_3vafg"]
 [ext_resource type="PackedScene" uid="uid://b8i25r8apvu52" path="res://UI/Ingame/ingame_hud.tscn" id="4_lxkdm"]
 [ext_resource type="PackedScene" uid="uid://bj5obb2exasso" path="res://Mechanics/HazardManager/hazard_manager.tscn" id="4_x58jo"]
+[ext_resource type="PackedScene" uid="uid://bjh6sj6ppu4m0" path="res://Mechanics/HitHurtTriggerBox/triggerbox.tscn" id="6_upn2v"]
+[ext_resource type="Script" path="res://Scripts/Actions/ActionFolder/player_fell.gd" id="7_c4qgx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qhsa"]
+size = Vector2(4364, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5o6w"]
+size = Vector2(24, 1176)
 
 [node name="MainGameStage" type="Node2D"]
 
@@ -46,3 +54,32 @@ position = Vector2(1088, 624)
 bat_spawner_array = [NodePath("../Spawners/BatSpawner"), NodePath("../Spawners/BatSpawner2"), NodePath("../Spawners/BatSpawner3"), NodePath("../Spawners/BatSpawner4"), NodePath("../Spawners/BatSpawner5"), NodePath("../Spawners/BatSpawner6"), NodePath("../Spawners/BatSpawner7"), NodePath("../Spawners/BatSpawner8"), NodePath("../Spawners/BatSpawner9")]
 
 [node name="IngameHud" parent="." instance=ExtResource("4_lxkdm")]
+
+[node name="Triggerbox" parent="." node_paths=PackedStringArray("action") instance=ExtResource("6_upn2v")]
+position = Vector2(240, 824)
+collision_layer = 0
+collision_mask = 2
+action = NodePath("../PlayerFell")
+
+[node name="CollisionShape2D" parent="Triggerbox" index="0"]
+position = Vector2(280, -104)
+shape = SubResource("RectangleShape2D_0qhsa")
+
+[node name="Triggerbox2" parent="." node_paths=PackedStringArray("action") instance=ExtResource("6_upn2v")]
+position = Vector2(-240, 120)
+action = NodePath("../PlayerFell")
+
+[node name="CollisionShape2D" parent="Triggerbox2" index="0"]
+position = Vector2(-608, 0)
+shape = SubResource("RectangleShape2D_g5o6w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Triggerbox2"]
+position = Vector2(2496, 8)
+shape = SubResource("RectangleShape2D_g5o6w")
+debug_color = Color(0, 0, 1, 0.419608)
+
+[node name="PlayerFell" type="Node" parent="."]
+script = ExtResource("7_c4qgx")
+
+[editable path="Triggerbox"]
+[editable path="Triggerbox2"]
