@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8i25r8apvu52"]
+[gd_scene load_steps=6 format=3 uid="uid://b8i25r8apvu52"]
 
 [ext_resource type="PackedScene" uid="uid://bwe1naffm8x2q" path="res://UI/ScoreCounter/score_counter_ui.tscn" id="1_g6gvh"]
 [ext_resource type="PackedScene" uid="uid://d1uqi8ibxyf58" path="res://UI/Pause/pause.tscn" id="1_nndd6"]
 [ext_resource type="PackedScene" uid="uid://cnnyxigcpinl0" path="res://UI/Health/health_ui.tscn" id="2_f7qqd"]
+[ext_resource type="PackedScene" uid="uid://c8tqfvmk3rmib" path="res://UI/DashAvailable/dash_available.tscn" id="2_xuo2h"]
 [ext_resource type="PackedScene" uid="uid://wkuna7d3rvmi" path="res://UI/GameOver/game_over.tscn" id="3_jdty3"]
 
 [node name="IngameHud" type="CanvasLayer"]
@@ -13,6 +14,12 @@ anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
 size_flags_horizontal = 8
+
+[node name="DashAvailable" parent="." instance=ExtResource("2_xuo2h")]
+anchors_preset = 3
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
 
 [node name="Pause" parent="." instance=ExtResource("1_nndd6")]
 

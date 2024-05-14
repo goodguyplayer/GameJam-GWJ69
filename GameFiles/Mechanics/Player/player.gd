@@ -39,7 +39,7 @@ func _physics_process(delta):
 
 
 func _on_dash_timer_timeout():
-	print("Timer stopped")
+	SignalsAutoload.dash_available.emit()
 
 
 func _on_health_component_health_changed(old_health, new_health):
