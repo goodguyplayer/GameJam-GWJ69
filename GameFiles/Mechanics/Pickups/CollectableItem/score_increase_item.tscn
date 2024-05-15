@@ -17,6 +17,7 @@ collision_mask = 0
 script = ExtResource("1_iweb5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 0, 1)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_g2aeq")
 
@@ -28,6 +29,7 @@ shape = SubResource("RectangleShape2D_3xwf4")
 [node name="Collisions" type="Node2D" parent="."]
 
 [node name="Triggerbox" parent="Collisions" node_paths=PackedStringArray("action") instance=ExtResource("3_syrrg")]
+modulate = Color(0, 1, 0, 1)
 collision_layer = 0
 collision_mask = 2
 action = NodePath("../../ScoreIncrease")
