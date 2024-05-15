@@ -8,7 +8,7 @@ extends Node2D
 @export var increment : float = 0.5
 @export var bats_per_spawn : int = 3
 @export var voids_per_spawn : int = 2
-@export var items_per_spawn : int = 2
+@export var items_per_spawn : int = 1
 
 @onready var timer : Timer = $Timer
 @onready var void_timer : Timer = $VoidTimer
