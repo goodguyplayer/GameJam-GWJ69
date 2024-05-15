@@ -23,6 +23,7 @@ func _ready():
 	highscore = config.get_value("score", "highscore")
 	current_score = 0
 	SignalsAutoload.player_fell.connect(on_quit)
+	SignalsAutoload.score_increase.connect(_score_increase)
 
 
 func save_score(high, current) -> void:
