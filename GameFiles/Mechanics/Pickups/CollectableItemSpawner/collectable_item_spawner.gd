@@ -13,6 +13,6 @@ var path_array : Array = [
 func spawn_colletable() -> void:
 	print("SPAWNING")
 	var to_spawn : CollectableItem = load(path_array[spawner]).instantiate()
-	to_spawn.direction = (self.global_position - marker_2d.global_position).normalized()
+	to_spawn.direction = (marker_2d.global_position - self.global_position).normalized()
 	to_spawn.position = marker_2d.global_position
 	get_tree().current_scene.add_child(to_spawn)
