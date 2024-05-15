@@ -11,6 +11,8 @@ size = Vector2(32, 32)
 radius = 22.0227
 
 [node name="CollectableItem" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_3nvyu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -25,6 +27,8 @@ shape = SubResource("RectangleShape2D_3xwf4")
 [node name="Collisions" type="Node2D" parent="."]
 
 [node name="Triggerbox" parent="Collisions" instance=ExtResource("3_qgglv")]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="Collisions/Triggerbox" index="0"]
 shape = SubResource("CircleShape2D_bt7vp")

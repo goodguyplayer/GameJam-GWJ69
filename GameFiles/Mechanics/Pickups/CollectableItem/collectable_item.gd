@@ -2,7 +2,7 @@ class_name CollectableItem
 extends CharacterBody2D
 
 
-@export var movement_speed = 1000
+@export var movement_speed = 10000
 @export var direction : Vector2
 
 
