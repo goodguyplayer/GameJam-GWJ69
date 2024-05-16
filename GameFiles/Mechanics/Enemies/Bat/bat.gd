@@ -2,10 +2,15 @@ class_name Bat
 extends CharacterBody2D
 
 
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
+
 @export var movement_speed = -10000
 
-
 var flag_show_up : bool = false
+
+
+func _ready():
+	animation_player.play("fly_up")
 
 
 func _physics_process(delta):
