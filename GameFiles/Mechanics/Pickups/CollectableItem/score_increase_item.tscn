@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dvssit4d2nrjf"]
 
 [ext_resource type="Script" path="res://Mechanics/Pickups/CollectableItem/collectable_item.gd" id="1_iweb5"]
-[ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="2_g2aeq"]
+[ext_resource type="Texture2D" uid="uid://2prjjwe5city" path="res://Assets/GODOTJAM-TextureBank/Pickups.png" id="2_6qjiw"]
 [ext_resource type="PackedScene" uid="uid://bjh6sj6ppu4m0" path="res://Mechanics/HitHurtTriggerBox/triggerbox.tscn" id="3_syrrg"]
 [ext_resource type="Script" path="res://Scripts/Actions/ActionFolder/score_increase.gd" id="4_na62s"]
 
@@ -17,9 +17,10 @@ collision_mask = 0
 script = ExtResource("1_iweb5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 0, 1)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_g2aeq")
+position = Vector2(4.76837e-07, -1.90735e-06)
+scale = Vector2(2.75, 2.75)
+texture = ExtResource("2_6qjiw")
+hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3xwf4")
