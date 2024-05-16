@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://1y1iddc5yplj"]
+[gd_scene load_steps=12 format=3 uid="uid://1y1iddc5yplj"]
 
-[ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="1_jrsn5"]
 [ext_resource type="Script" path="res://Mechanics/Player/player.gd" id="1_v6pa8"]
+[ext_resource type="Texture2D" uid="uid://c45v7xcqwacd0" path="res://Assets/GODOTJAM-TextureBank/Man.png" id="2_0grcr"]
 [ext_resource type="Script" path="res://Component/health_component.gd" id="3_jv7kd"]
 [ext_resource type="PackedScene" uid="uid://cixv2x1ghsbco" path="res://Mechanics/HitHurtTriggerBox/hurtbox.tscn" id="4_v3pys"]
 
@@ -9,7 +9,7 @@
 size = Vector2(48, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsd3y"]
-size = Vector2(48, 48)
+size = Vector2(37, 66)
 
 [sub_resource type="Animation" id="Animation_c7ndb"]
 length = 0.001
@@ -36,6 +36,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_bf84x"]
@@ -69,10 +81,40 @@ tracks/1/keys = {
 "values": [false, true, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_bwsr6"]
+resource_name = "die"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(1, 1), Vector2i(0, 3)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_badps"]
 _data = {
 "RESET": SubResource("Animation_c7ndb"),
 "clear": SubResource("Animation_bf84x"),
+"die": SubResource("Animation_bwsr6"),
 "flicker": SubResource("Animation_gy1kj")
 }
 
@@ -82,8 +124,11 @@ collision_mask = 0
 script = ExtResource("1_v6pa8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("1_jrsn5")
+position = Vector2(0, 1.90735e-06)
+scale = Vector2(2, 2.56)
+texture = ExtResource("2_0grcr")
+hframes = 2
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jtb5j")
@@ -104,6 +149,7 @@ collision_mask = 4
 health_component = NodePath("../../Components/HealthComponent")
 
 [node name="CollisionShape2D" parent="Collisions/Hurtbox" index="0"]
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_jsd3y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

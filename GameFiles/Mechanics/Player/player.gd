@@ -48,4 +48,5 @@ func _on_health_component_health_changed(old_health, new_health):
 
 
 func _on_health_component_died():
+	animation_player.play("die")
 	SignalsAutoload.player_died.emit()
