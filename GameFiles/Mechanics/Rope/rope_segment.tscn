@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2c4egvr66gl7"]
 
-[ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="1_d6k58"]
+[ext_resource type="Texture2D" uid="uid://dk7uvryq7jh18" path="res://Assets/GODOTJAM-TextureBank/Rope_Full.png" id="1_q8b8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d6dm0"]
 size = Vector2(16, 64)
@@ -8,9 +8,9 @@ size = Vector2(16, 64)
 [node name="RopeSegment" type="RigidBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, 0)
-scale = Vector2(0.125, 0.5)
-texture = ExtResource("1_d6k58")
+position = Vector2(-2.38419e-07, 3.57628e-07)
+scale = Vector2(4, 2.25)
+texture = ExtResource("1_q8b8e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_d6dm0")
