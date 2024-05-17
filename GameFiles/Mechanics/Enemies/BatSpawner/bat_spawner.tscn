@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxiiui4ggfm4t"]
 
 [ext_resource type="Script" path="res://Mechanics/Enemies/BatSpawner/bat_spawner.gd" id="1_sqxm1"]
-[ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="2_wi1x4"]
+[ext_resource type="Texture2D" uid="uid://dlat63bfpp2ee" path="res://Assets/GODOTJAM-TextureBank/warning_sign.png" id="2_yrpy8"]
 
 [sub_resource type="Animation" id="Animation_q28rf"]
 length = 0.001
@@ -61,7 +61,7 @@ script = ExtResource("1_sqxm1")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(7.15256e-07, -4.76837e-07)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_wi1x4")
+texture = ExtResource("2_yrpy8")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, 64)

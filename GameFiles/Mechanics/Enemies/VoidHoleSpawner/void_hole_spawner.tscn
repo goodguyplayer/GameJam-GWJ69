@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b66tt6tmrjw4l"]
 
 [ext_resource type="Script" path="res://Mechanics/Enemies/VoidHoleSpawner/void_hole_spawner.gd" id="1_fswhr"]
-[ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="2_1pqqn"]
+[ext_resource type="Texture2D" uid="uid://dlat63bfpp2ee" path="res://Assets/GODOTJAM-TextureBank/warning_sign.png" id="2_155aw"]
 
 [sub_resource type="Animation" id="Animation_juihm"]
 length = 0.001
@@ -61,7 +61,7 @@ script = ExtResource("1_fswhr")
 modulate = Color(1, 1, 1, 0)
 position = Vector2(7.15256e-07, -4.76837e-07)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_1pqqn")
+texture = ExtResource("2_155aw")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
