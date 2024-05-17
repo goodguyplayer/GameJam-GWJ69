@@ -10,6 +10,12 @@ func _ready():
 
 func score_update(new_current, new_high) -> void:
 	currentscore.text = str(new_current)
-	currentscore.text += " Nice" if new_current == 69 else ""
+	currentscore.text += easter_egg_check(new_current)
 	highscore.text = str(new_high)
-	highscore.text += " Nice" if new_high == 69 else ""
+	highscore.text += easter_egg_check(new_high)
+
+
+func easter_egg_check(value : int) -> String:
+	if str(value).find("69") != -1:
+		return " Nice"
+	return ""
