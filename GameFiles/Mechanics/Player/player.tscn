@@ -1,15 +1,23 @@
-[gd_scene load_steps=12 format=3 uid="uid://1y1iddc5yplj"]
+[gd_scene load_steps=14 format=3 uid="uid://1y1iddc5yplj"]
 
 [ext_resource type="Script" path="res://Mechanics/Player/player.gd" id="1_v6pa8"]
 [ext_resource type="Texture2D" uid="uid://c45v7xcqwacd0" path="res://Assets/GODOTJAM-TextureBank/Man.png" id="2_0grcr"]
 [ext_resource type="Script" path="res://Component/health_component.gd" id="3_jv7kd"]
 [ext_resource type="PackedScene" uid="uid://cixv2x1ghsbco" path="res://Mechanics/HitHurtTriggerBox/hurtbox.tscn" id="4_v3pys"]
 
+[sub_resource type="Gradient" id="Gradient_b13mv"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bv3qa"]
+gradient = SubResource("Gradient_b13mv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jtb5j"]
 size = Vector2(48, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsd3y"]
-size = Vector2(37, 66)
+size = Vector2(36, 104)
 
 [sub_resource type="Animation" id="Animation_c7ndb"]
 length = 0.001
@@ -53,34 +61,6 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_bf84x"]
 resource_name = "clear"
 
-[sub_resource type="Animation" id="Animation_gy1kj"]
-resource_name = "flicker"
-length = 0.6
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Collisions/Hurtbox:monitoring")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, false, true]
-}
-
 [sub_resource type="Animation" id="Animation_bwsr6"]
 resource_name = "die"
 length = 0.1
@@ -110,6 +90,34 @@ tracks/1/keys = {
 "values": [Vector2i(1, 1), Vector2i(0, 3)]
 }
 
+[sub_resource type="Animation" id="Animation_gy1kj"]
+resource_name = "flicker"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Collisions/Hurtbox:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_badps"]
 _data = {
 "RESET": SubResource("Animation_c7ndb"),
@@ -124,11 +132,16 @@ collision_mask = 0
 script = ExtResource("1_v6pa8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 1.90735e-06)
-scale = Vector2(2, 2.56)
+position = Vector2(1, 0)
+scale = Vector2(4, 4)
 texture = ExtResource("2_0grcr")
 hframes = 2
 vframes = 4
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-9.53674e-07, 1.90735e-06)
+scale = Vector2(1.25, 1.25)
+texture = SubResource("GradientTexture2D_bv3qa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jtb5j")
@@ -149,7 +162,7 @@ collision_mask = 4
 health_component = NodePath("../../Components/HealthComponent")
 
 [node name="CollisionShape2D" parent="Collisions/Hurtbox" index="0"]
-position = Vector2(0.5, 1)
+position = Vector2(-3, -12)
 shape = SubResource("RectangleShape2D_jsd3y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
