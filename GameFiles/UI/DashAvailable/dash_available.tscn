@@ -1,17 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8tqfvmk3rmib"]
+[gd_scene load_steps=8 format=3 uid="uid://c8tqfvmk3rmib"]
 
 [ext_resource type="Script" path="res://UI/DashAvailable/dash_available.gd" id="1_cea33"]
-[ext_resource type="Texture2D" uid="uid://caqxvc74c13nk" path="res://Assets/GODOTJAM-TextureBank/Dash.png" id="2_ngomm"]
+[ext_resource type="Texture2D" uid="uid://dvyokd5xy4nge" path="res://Assets/GODOTJAM-TextureBank/Dash_Expanded_empty.png" id="2_mgk1r"]
+[ext_resource type="Texture2D" uid="uid://rswvn6axgrsj" path="res://Assets/GODOTJAM-TextureBank/Dash_Expanded_full.png" id="3_cv68y"]
 
 [sub_resource type="Animation" id="Animation_sab3c"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Full:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Empty:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -24,7 +37,7 @@ length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
+tracks/0/path = NodePath("Full:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,11 +46,52 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Empty:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_an2m4"]
+resource_name = "dash_used"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Empty:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Full:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2jema"]
 _data = {
 "RESET": SubResource("Animation_sab3c"),
-"dash_available": SubResource("Animation_l4p4m")
+"dash_available": SubResource("Animation_l4p4m"),
+"dash_used": SubResource("Animation_an2m4")
 }
 
 [node name="DashAvailable" type="Control"]
@@ -48,7 +102,7 @@ anchor_right = 1.0
 grow_horizontal = 0
 script = ExtResource("1_cea33")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Empty" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 3
@@ -56,11 +110,25 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -256.0
+offset_left = -128.0
 offset_top = -128.0
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_ngomm")
+texture = ExtResource("2_mgk1r")
+
+[node name="Full" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_cv68y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
