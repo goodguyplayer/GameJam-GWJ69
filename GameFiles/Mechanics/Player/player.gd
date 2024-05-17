@@ -31,6 +31,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("input_dash"):
 			force_to_push *= dash_force
 			dash_timer.start(dash_delay)
+			SignalsAutoload.dash_used.emit()
 			
 	apply_force(force_to_push)
 
