@@ -12,6 +12,7 @@ const FILE_NAME = "score_config"
 
 var config : ConfigFile
 var save_path = SAVE_DIR + FILE_NAME + FILE_FORMAT
+var is_new_highscore : bool = false
 
 
 func _ready():
@@ -29,6 +30,7 @@ func _ready():
 func save_score(high, current) -> void:
 	config.set_value("score", "highscore", high)
 	config.save(save_path)
+	SignalsAutoload.score_final.emit(current_score, highscore, is_new_highscore)
 
 
 func on_quit() -> void:
@@ -46,6 +48,7 @@ func _score_increase(value) -> void:
 func _on_timer_timeout():
 	current_score += 1
 	if current_score >= highscore:
+		is_new_highscore = true
 		highscore = current_score
 	SignalsAutoload.score_changed.emit(current_score, highscore)
 	

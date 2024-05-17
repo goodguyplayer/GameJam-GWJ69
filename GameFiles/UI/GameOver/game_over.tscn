@@ -76,6 +76,25 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 6
 
+[node name="CurrentScore" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Current score.: %s"
+horizontal_alignment = 1
+
+[node name="HightScore" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Highscore.: %s"
+horizontal_alignment = 1
+
+[node name="NewHighScore" type="Label" parent="MarginContainer/Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 6
+text = "New high score!"
+horizontal_alignment = 1
+
 [node name="HSeparator4" type="HSeparator" parent="MarginContainer/Panel/VBoxContainer"]
 layout_mode = 2
 
