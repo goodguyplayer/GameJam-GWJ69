@@ -5,11 +5,11 @@
 [ext_resource type="Script" path="res://Component/health_component.gd" id="3_jv7kd"]
 [ext_resource type="PackedScene" uid="uid://cixv2x1ghsbco" path="res://Mechanics/HitHurtTriggerBox/hurtbox.tscn" id="4_v3pys"]
 
-[sub_resource type="Gradient" id="Gradient_b13mv"]
+[sub_resource type="Gradient" id="Gradient_p4cw1"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bv3qa"]
-gradient = SubResource("Gradient_b13mv")
+gradient = SubResource("Gradient_p4cw1")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
