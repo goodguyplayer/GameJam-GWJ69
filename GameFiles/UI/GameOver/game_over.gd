@@ -17,8 +17,8 @@ func game_over() -> void:
 
 
 func update_final_score(current_score, highscore, is_new_highscore) -> void:
-	current_score_label.text = current_score_label.text % [str(current_score)]
-	hight_score_label.text = hight_score_label.text % [str(highscore)]
+	current_score_label.text = current_score_label.text % str(current_score)
+	hight_score_label.text = hight_score_label.text % str(highscore)
 	if is_new_highscore:
 		new_high_score_label.visible = true
 
