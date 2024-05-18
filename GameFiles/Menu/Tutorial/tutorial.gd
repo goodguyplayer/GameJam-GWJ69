@@ -1,7 +1,7 @@
 extends Control
 
-@onready var swing : Label = $MarginContainer/ScrollContainer/VBoxContainer/Swing
-@onready var dash : Label  = $MarginContainer/ScrollContainer/VBoxContainer/Dash
+@onready var swing : Label = $MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Swing
+@onready var dash : Label  = $MarginContainer/ScrollContainer/VBoxContainer/Dash3/Dash
 
 
 func _ready():

@@ -1,12 +1,136 @@
-[gd_scene load_steps=4 format=3 uid="uid://dksbpk7mn1n34"]
+[gd_scene load_steps=26 format=3 uid="uid://dksbpk7mn1n34"]
 
 [ext_resource type="Script" path="res://Menu/Tutorial/tutorial.gd" id="1_qy5ii"]
+[ext_resource type="Script" path="res://Menu/Tutorial/animated_text_rect.gd" id="2_hbo55"]
+[ext_resource type="Texture2D" uid="uid://ce4cjmavmyyut" path="res://Assets/GODOTJAM-TextureBank/Bat.png" id="3_8ivnl"]
+[ext_resource type="Texture2D" uid="uid://caqxvc74c13nk" path="res://Assets/GODOTJAM-TextureBank/Dash.png" id="4_igjrl"]
+[ext_resource type="Texture2D" uid="uid://2prjjwe5city" path="res://Assets/GODOTJAM-TextureBank/Pickups.png" id="5_5me2v"]
+[ext_resource type="Texture2D" uid="uid://d3asstqqjuips" path="res://Assets/GODOTJAM-TextureBank/LivesCounter.png" id="5_ur24o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k84ka"]
 bg_color = Color(0, 0, 0, 0.564706)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi8sv"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3cvk"]
+atlas = ExtResource("3_8ivnl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj81x"]
+atlas = ExtResource("3_8ivnl")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd0mm"]
+atlas = ExtResource("3_8ivnl")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pl7f"]
+atlas = ExtResource("3_8ivnl")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_668tq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3cvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj81x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd0mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pl7f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nfts"]
+bg_color = Color(1, 1, 1, 0.145098)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vt0i"]
+atlas = ExtResource("4_igjrl")
+region = Rect2(0, 0, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjmt8"]
+atlas = ExtResource("4_igjrl")
+region = Rect2(8, 0, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjaa0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vt0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjmt8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bdqf"]
+atlas = ExtResource("5_ur24o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84hvs"]
+atlas = ExtResource("5_ur24o")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ougd0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bdqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84hvs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_peb71"]
+atlas = ExtResource("5_5me2v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p83oh"]
+atlas = ExtResource("5_5me2v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhbqu"]
+atlas = ExtResource("5_5me2v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqhom"]
+atlas = ExtResource("5_5me2v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ank7q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_peb71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p83oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhbqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqhom")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -73,20 +197,89 @@ Not only that, but now there's bats and tentacles trying to get you to let go of
 Lucky for you, you brought some nice tunes. Might as well enjoy them once more before you end up lost forever!"
 horizontal_alignment = 1
 
-[node name="Swing" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Swing with your arrow keys %s and %s to avoid the incoming bats & other dangers!"
+size_flags_horizontal = 4
+
+[node name="Swing" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Swing with  \"%s\" and \"%s\" to avoid the incoming bats & other dangers!"
 horizontal_alignment = 1
 
-[node name="Dash" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Bat" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Use %s to dash towards where you're moving, but look out! You can only do it every once in a while!"
+texture = SubResource("AtlasTexture_u3cvk")
+script = ExtResource("2_hbo55")
+sprites = SubResource("SpriteFrames_668tq")
+autoplay = true
+Animation = "default"
+Frame = 0
+"Speed Scale" = 1.0
+
+[node name="Panel" type="Panel" parent="MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/Bat"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3nfts")
+
+[node name="Dash3" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Dash" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Dash3"]
+layout_mode = 2
+text = "Use \"%s\" to dash towards where you're moving, but look out! You can only do it every once in a while!"
 horizontal_alignment = 1
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/Dash3"]
+layout_mode = 2
+script = ExtResource("2_hbo55")
+sprites = SubResource("SpriteFrames_gjaa0")
+autoplay = true
+Animation = "default"
+Frame = 0
+"Speed Scale" = 0.5
+
+[node name="Dash4" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Dash4"]
+layout_mode = 2
+text = "You only have 3 hearts! Be careful to not lose them!"
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/Dash4"]
+layout_mode = 2
+script = ExtResource("2_hbo55")
+sprites = SubResource("SpriteFrames_ougd0")
+autoplay = true
+Animation = "default"
+Frame = 0
+"Speed Scale" = 0.3
+
+[node name="Dash5" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer/Dash5"]
+layout_mode = 2
+text = "Collect the orbs to increase your score!"
+
+[node name="AnimatedTextureRect" type="TextureRect" parent="MarginContainer/ScrollContainer/VBoxContainer/Dash5"]
+layout_mode = 2
+script = ExtResource("2_hbo55")
+sprites = SubResource("SpriteFrames_ank7q")
+autoplay = true
+Animation = "default"
+Frame = 0
+"Speed Scale" = 1.0
 
 [node name="Dash2" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Avoid the bats, listen to the tunes and don't get hit 3 times!
-
+text = "
 
 See you on the endless vastness of the void! ... Eventually. "
 horizontal_alignment = 1
