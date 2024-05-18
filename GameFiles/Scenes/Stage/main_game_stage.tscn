@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmsuxg42wikxr"]
+[gd_scene load_steps=15 format=3 uid="uid://dmsuxg42wikxr"]
 
 [ext_resource type="PackedScene" uid="uid://b1br1k4f353ub" path="res://Mechanics/ScrollingScene/scrolling_scene.tscn" id="1_kvxan"]
 [ext_resource type="PackedScene" uid="uid://pcx51ty550r8" path="res://Mechanics/Player/player_rope.tscn" id="2_aw8o4"]
@@ -10,12 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://bjh6sj6ppu4m0" path="res://Mechanics/HitHurtTriggerBox/triggerbox.tscn" id="6_upn2v"]
 [ext_resource type="Script" path="res://Scripts/Actions/ActionFolder/player_fell.gd" id="7_c4qgx"]
 [ext_resource type="PackedScene" uid="uid://bu3saq68wp872" path="res://Mechanics/ScoreCounter/score_counter.tscn" id="9_kmsc8"]
+[ext_resource type="PackedScene" uid="uid://b523buwsae8ym" path="res://Mechanics/AudioPlayer/audio_manager.tscn" id="11_jioup"]
+[ext_resource type="PackedScene" uid="uid://bl3y86mus012x" path="res://Mechanics/AudioPlayer/music_player.tscn" id="12_7g8mb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qhsa"]
-size = Vector2(4364, 48)
+size = Vector2(4364, 816)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5o6w"]
-size = Vector2(24, 1176)
+size = Vector2(756, 2396)
 
 [node name="MainGameStage" type="Node2D"]
 
@@ -161,7 +163,7 @@ collision_mask = 2
 action = NodePath("../PlayerFell")
 
 [node name="CollisionShape2D" parent="Triggerbox" index="0"]
-position = Vector2(280, -104)
+position = Vector2(280, 280)
 shape = SubResource("RectangleShape2D_0qhsa")
 
 [node name="Triggerbox2" parent="." node_paths=PackedStringArray("action") instance=ExtResource("6_upn2v")]
@@ -169,11 +171,11 @@ position = Vector2(-240, 120)
 action = NodePath("../PlayerFell")
 
 [node name="CollisionShape2D" parent="Triggerbox2" index="0"]
-position = Vector2(-608, 0)
+position = Vector2(-1656, -632)
 shape = SubResource("RectangleShape2D_g5o6w")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Triggerbox2"]
-position = Vector2(2496, 8)
+position = Vector2(3232, -600)
 shape = SubResource("RectangleShape2D_g5o6w")
 debug_color = Color(0, 0, 1, 0.419608)
 
@@ -181,6 +183,12 @@ debug_color = Color(0, 0, 1, 0.419608)
 script = ExtResource("7_c4qgx")
 
 [node name="ScoreCounter" parent="." instance=ExtResource("9_kmsc8")]
+
+[node name="AudioMusicHandler" type="Node2D" parent="."]
+
+[node name="AudioManager" parent="AudioMusicHandler" instance=ExtResource("11_jioup")]
+
+[node name="MusicPlayer" parent="AudioMusicHandler" instance=ExtResource("12_7g8mb")]
 
 [editable path="CollectableItemSpawners/CollectableItemSpawner"]
 [editable path="CollectableItemSpawners/CollectableItemSpawner2"]
