@@ -10,7 +10,7 @@ script = ExtResource("1_xtf56")
 [node name="Rope" parent="." instance=ExtResource("1_pinm4")]
 
 [node name="Player" parent="." instance=ExtResource("2_7pdwd")]
-position = Vector2(0, 712)
+position = Vector2(0, 760)
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(0, 712)
