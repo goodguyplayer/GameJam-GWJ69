@@ -65,19 +65,25 @@ horizontal_alignment = 1
 [node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "2D Nebula Shader - Flytrap"
+text = "2D Nebula Shader - By Flytrap"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "“Unit Selected” Oscillating Circle - Erich_L"
+text = "“Unit Selected” Oscillating Circle - By Erich_L"
 horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Bat, Player, Rope, Everything - DemonOfRazgriz"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Warning Sign - Goodguyplayer"
 horizontal_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -87,6 +93,18 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Audio & Music"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Synthwave Music Library - By DOS-88"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "8-bit / 16-bit Sound Effects (x25) Pack - By jdwasabi"
 horizontal_alignment = 1
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
