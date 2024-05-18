@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctqj1sts8y7gv"
+path="res://.godot/imported/DOS-88 - Automatav2.mp3-ce128a812fe409a14fe7299b42313784.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/DOS-88 - Automatav2.mp3"
+dest_files=["res://.godot/imported/DOS-88 - Automatav2.mp3-ce128a812fe409a14fe7299b42313784.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

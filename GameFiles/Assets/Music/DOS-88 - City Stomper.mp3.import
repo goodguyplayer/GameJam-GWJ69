@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2lhkfpwcg1v7"
+path="res://.godot/imported/DOS-88 - City Stomper.mp3-c0c965d49d7b3e863883d21162586ca6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/DOS-88 - City Stomper.mp3"
+dest_files=["res://.godot/imported/DOS-88 - City Stomper.mp3-c0c965d49d7b3e863883d21162586ca6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
