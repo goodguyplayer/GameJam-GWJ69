@@ -1,11 +1,13 @@
 [gd_scene load_steps=15 format=3 uid="uid://bb5v0qpxet5da"]
 
 [ext_resource type="Script" path="res://Mechanics/Enemies/Bat/bat.gd" id="1_24vpx"]
-[ext_resource type="Texture2D" uid="uid://ce4cjmavmyyut" path="res://Assets/GODOTJAM-TextureBank/Bat.png" id="2_8603m"]
 [ext_resource type="Script" path="res://Component/attack_component.gd" id="3_cshyu"]
 [ext_resource type="Shader" path="res://Mechanics/Enemies/VoidHole/void_hole.gdshader" id="3_md2xe"]
 [ext_resource type="PackedScene" uid="uid://ct12gy5o1ped" path="res://Mechanics/HitHurtTriggerBox/hitbox.tscn" id="4_apqcn"]
 [ext_resource type="Texture2D" uid="uid://dp3xpyk64q83c" path="res://icon.svg" id="4_bpplw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p01pk"]
+load_path = "res://.godot/imported/Bat.png-fa2924a0d4ffe033bbf36ddded1b83fc.ctex"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_10jjq"]
 shader = ExtResource("3_md2xe")
@@ -76,7 +78,7 @@ script = ExtResource("1_24vpx")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-9.53674e-07, -9.53674e-07)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_8603m")
+texture = SubResource("CompressedTexture2D_p01pk")
 hframes = 4
 vframes = 4
 frame = 1

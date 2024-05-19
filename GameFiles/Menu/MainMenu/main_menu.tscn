@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://n6wq52ca4kgi"]
+[gd_scene load_steps=9 format=3 uid="uid://n6wq52ca4kgi"]
 
 [ext_resource type="Script" path="res://Menu/MainMenu/main_menu.gd" id="1_cbkmk"]
 [ext_resource type="Texture2D" uid="uid://kklww6sxjat1" path="res://Assets/Menus/69-Void.webp" id="1_kka37"]
-[ext_resource type="Texture2D" uid="uid://qmy0krq4cvqk" path="res://Assets/Menus/69-All-Cards.webp" id="2_jg2lf"]
+[ext_resource type="Texture2D" uid="uid://blt83s773genw" path="res://Assets/Menus/cooldown.png" id="3_4js2w"]
+[ext_resource type="Texture2D" uid="uid://lepmtiy1118r" path="res://Assets/Menus/easter-egg.png" id="4_rbfag"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gqwtq"]
 bg_color = Color(0.14902, 0.00392157, 0.211765, 1)
@@ -95,7 +96,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "TO THE DEPTHS AND BEYOND!"
+text = "THREAD IN THE VOID"
 horizontal_alignment = 1
 
 [node name="Subtitle" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
@@ -131,10 +132,19 @@ layout_mode = 2
 texture = ExtResource("1_kka37")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(300, 200)
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
-texture = ExtResource("2_jg2lf")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+texture = ExtResource("3_4js2w")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+texture = ExtResource("4_rbfag")
 expand_mode = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
