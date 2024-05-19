@@ -18,7 +18,7 @@ var song_array : Array[String] = [
 
 func _ready():
 	if OptionsAutoload.music_enabled:
-		audio_stream_player.volume_db = linear_to_db(OptionsAutoload.music_volume)
+		audio_stream_player.volume_db = linear_to_db(OptionsAutoload.music_volume / 100)
 	else:
 		queue_free()
 	choose_random_song()
