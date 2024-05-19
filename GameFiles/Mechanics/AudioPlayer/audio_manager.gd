@@ -10,7 +10,7 @@ const GAME_OVER_SOUND : String = "res://Assets/Music/Boss hit 1.wav"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if OptionsAutoload.audio_enabled:
-		audio_stream_player.volume_db = OptionsAutoload.audio_volume / 100
+		audio_stream_player.volume_db =  linear_to_db(OptionsAutoload.audio_volume)
 	else:
 		queue_free()
 	SignalsAutoload.score_increase.connect(player_collected_item)
